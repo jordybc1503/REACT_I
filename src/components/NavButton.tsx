@@ -1,10 +1,8 @@
-import styles from "./NavButton.module.css";
-
 export default function NavBar({ title, link }) {
   return (
     <>
-      <li className={styles["nav-li"]}>
-        <a className={styles["nav-a"]} href={link}>
+      <li className="list-none">
+        <a className="text-white font-bold text-center w-[150px] px-1 py-0 text-sm inline-block hover:underline" href={link}>
           {title}
         </a>
       </li>
