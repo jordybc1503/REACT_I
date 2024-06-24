@@ -1,0 +1,32 @@
+# Dependency directories
+node_modules/
+
+# Production build folder
+/build
+
+# Debug log from npm
+npm-debug.log*
+
+# Environment variables
+.env
+
+# IDE and editor folders
+/.vs
+/.vscode
+/.idea
+
+# Optional eslint cache
+.eslintcache
+
+# macOS folder attributes
+.DS_Store
+
+# Optional: Yarn error logs
+yarn-error.log
+
+# Optional: Windows system files
+Thumbs.db
+
+# folder with my solutions guides
+
+soluciones/
