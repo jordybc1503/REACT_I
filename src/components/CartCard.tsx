@@ -1,11 +1,14 @@
 import { useRef } from "react";
+import Product from "../interfaces/products";
+import ProductProp from "../interfaces/ProductProp";
 
-function CartCard({ product }) {
+function CartCard(prop: ProductProp) {
+    const {product} = prop; 
     const { id, title, images, description, price, quantity, colors } = product;
     const units = useRef();
     const manageUnits = () => {
         let productsOnCart = (productsOnCart = JSON.parse(localStorage.getItem("cart")));
-        const one = productsOnCart.find((each) => each.id === id);
+        const one = productsOnCart.find((each: Product) => each.id === id);
         one.units = Number(units.current.value);
         localStorage.setItem("cart", JSON.stringify(productsOnCart));
     };
@@ -15,7 +18,7 @@ function CartCard({ product }) {
         md:h-[220px] md:w-[680px] md:flex-row">
             <img
                 className="w-1/5 rounded-md"
-                src={images}
+                src={images[0]}
                 alt={title}
             />
             <div className="flex flex-col justify-between gap-0.5 w-full h-25 pl-2

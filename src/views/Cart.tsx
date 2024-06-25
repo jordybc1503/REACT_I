@@ -5,10 +5,11 @@ import Hero from "../components/Hero";
 import CartResume from "../components/CartResume";
 import CartCard from "../components/CartCard";
 import { useState, useEffect } from "react";
+import Product from "../interfaces/products";
 
 function Cart() {
 
-  const [productsOnCart, setProductsOnCart] = useState([]);
+  const [productsOnCart, setProductsOnCart] = useState<Product[]>([]);
   useEffect(() => {
     if (localStorage.getItem("cart")) {
       const products = JSON.parse(localStorage.getItem("cart"));
@@ -25,7 +26,7 @@ function Cart() {
       <main className="w-full flex p-5 items-start justify-center flex-wrap">
         <div className="w-full md:w-[680px] mr-5">
           {
-            productsOnCart.map((each) => (
+            productsOnCart.map((each: Product) => (
               <CartCard
                 key={each.id} product={each}
               ></CartCard>

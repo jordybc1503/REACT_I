@@ -4,7 +4,8 @@ export default interface product {
     description?: string;
     price: number;
     quantity?: number;
+    units?: number;
     images: Array<string>;
     colors: Array<string>;
-
+  
 }

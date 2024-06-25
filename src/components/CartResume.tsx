@@ -1,4 +1,11 @@
-const CartResume = ({total}) => {
+interface Props {
+  total: number;
+}
+
+
+const CartResume = (props: Props) => {
+
+  const {total} = props;
     return ( 
     <div className="w-[340px] flex-col bg-[#f2f2f2] rounded-[5px] p-[30px] m-2.5 h-[220px] break-words flex  justify-between">
         <div className="flex-grow flex flex-col justify-between">
