@@ -1,4 +1,4 @@
-const CartResume = () => {
+const CartResume = ({total}) => {
     return ( 
     <div className="w-[340px] flex-col bg-[#f2f2f2] rounded-[5px] p-[30px] m-2.5 h-[220px] break-words flex  justify-between">
         <div className="flex-grow flex flex-col justify-between">
@@ -9,7 +9,7 @@ const CartResume = () => {
           </h2>
           <div className="flex justify-between items-center">
             <h3>Total</h3>
-            <strong >$800000</strong>
+            <strong >{total}</strong>
           </div>
           <small className="pb-2.5">
             Incluye impuesto PAIS y percepción AFIP.

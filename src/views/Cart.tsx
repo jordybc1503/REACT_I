@@ -19,7 +19,7 @@ function Cart() {
           quantity="1"
           color="black"
         ></CartCard>
-        <CartResume></CartResume>
+        <CartResume total="$ 80000"></CartResume>
 
 
       </main>
