@@ -11,10 +11,17 @@ function Cart() {
       <NavBar />
       <Hero first="mi" second="carrito" />
       <main className="w-full flex justify-center items-center p-5 flex-row flex-wrap">
-        <CartCard></CartCard>
+        <CartCard
+          title="Ipad"
+          photo="https://i.postimg.cc/kX8PKZpq/ipad.jpg"
+          description="description of the product"
+          price="90"
+          quantity="1"
+          color="black"
+        ></CartCard>
         <CartResume></CartResume>
-        
-        
+
+
       </main>
       <Footer />
     </>
