@@ -4,21 +4,37 @@ import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import CartResume from "../components/CartResume";
 import CartCard from "../components/CartCard";
+import { useState, useEffect } from "react";
 
 function Cart() {
+
+  const [productsOnCart, setProductsOnCart] = useState([]);
+  useEffect(() => {
+    if (localStorage.getItem("cart")) {
+      const products = JSON.parse(localStorage.getItem("cart"));
+
+      setProductsOnCart(products);
+    }
+
+  }, [])
+
   return (
     <>
       <NavBar />
       <Hero first="mi" second="carrito" />
-      <main className="w-full flex justify-center items-center p-5 flex-row flex-wrap">
-        <CartCard
-          title="Ipad"
-          photo="https://i.postimg.cc/kX8PKZpq/ipad.jpg"
-          description="description of the product"
-          price="90"
-          quantity="1"
-          color="black"
-        ></CartCard>
+      <main className="w-full flex justify-center  p-5 flex-row flex-wrap items-start">
+        <div className="w-full">
+
+        
+        {
+          productsOnCart.map((each) => (
+            <CartCard
+            key={each.id} product={each}
+            ></CartCard>
+          ))
+        }
+        </div>
+
         <CartResume total="$ 80000"></CartResume>
 
 
