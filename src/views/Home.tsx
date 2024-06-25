@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
 import ProductCard from "../components/ProductCard";
 import products from "../assets/products";
+import product from "../interfaces/products";
 
 function Home() {
   return (
@@ -11,7 +12,7 @@ function Home() {
       <Hero first="tecnologia" second="renovada" />
       <main className="w-full flex justify-center items-center p-[20px]">
         <div className="w-[1080px] flex flex-wrap justify-between" id="products">
-          {products.map((each) => (
+          {products.map((each: product) => (
             <ProductCard
               key={each.id}
               id={each.id}
@@ -27,5 +28,6 @@ function Home() {
     </>
   );
 }
+
 
 export default Home;
