@@ -27,7 +27,7 @@ export default function Checkout({ product }) {
     }
     const one = productsOnCart.find((each) => each.id === product.id);
     if (!one) {
-      product.units = Number(units.current.value);
+      product.quantity = Number(units.current.value);
       productsOnCart.push(product);
       setButton(true);
     } else {

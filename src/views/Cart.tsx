@@ -22,17 +22,15 @@ function Cart() {
     <>
       <NavBar />
       <Hero first="mi" second="carrito" />
-      <main className="w-full flex justify-center  p-5 flex-row flex-wrap items-start">
-        <div className="w-full">
-
-        
-        {
-          productsOnCart.map((each) => (
-            <CartCard
-            key={each.id} product={each}
-            ></CartCard>
-          ))
-        }
+      <main className="w-full flex p-5 items-start justify-center flex-wrap">
+        <div className="w-full md:w-[680px] mr-5">
+          {
+            productsOnCart.map((each) => (
+              <CartCard
+                key={each.id} product={each}
+              ></CartCard>
+            ))
+          }
         </div>
 
         <CartResume total="$ 80000"></CartResume>

@@ -4,13 +4,10 @@ function CartCard({ product }) {
     const { id, title, images, description, price, quantity, colors } = product;
     const units = useRef();
     const manageUnits = () => {
-        let productsOnCart = []
-        if (localStorage.getItem("cart")) {
-            productsOnCart = JSON.parse(localStorage.getItem("cart"));
-        } else {
-            localStorage.setItem("cart", JSON.stringify([]));
-        }
-        const one = productsOnCart.find(each=>each.id===id)
+        let productsOnCart = (productsOnCart = JSON.parse(localStorage.getItem("cart")));
+        const one = productsOnCart.find((each) => each.id === id);
+        one.units = Number(units.current.value);
+        localStorage.setItem("cart", JSON.stringify(productsOnCart));
     };
 
     return (
@@ -37,10 +34,10 @@ function CartCard({ product }) {
                     ref={units}
                     onChange={manageUnits}
                     min="1"
-                    id="P7Q8R90"
+                    id={id}
                 />
             </div>
-            <strong className="w-full text-right md:w-1/5">{price}</strong>
+            <strong className="w-full text-right md:w-1/5">$ {price}</strong>
         </article>
     );
 }
