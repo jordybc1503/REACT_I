@@ -15,6 +15,8 @@ export default function NavBar() {
     ));
   };
 
+  
+
   return (
     <header className="w-full min-h-[150px] bg-[#ff3b3c] p-[20px 20px 0 20px] flex flex-col items-center"
     
@@ -37,7 +39,7 @@ export default function NavBar() {
             placeholder="Search"
             id="search"
             ref={text}
-            onchange={setText}
+            onChange={setText}
           />
         </form>
         <ul className="w-full md:w-1/3 flex items-center flex-grow justify-center pb-2
