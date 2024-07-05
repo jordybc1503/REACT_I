@@ -3,10 +3,7 @@ import { createAction } from "@reduxjs/toolkit";
 //objeto para accion de capturas texto
 const captureText = createAction(
     "captureText",
-    (obj)=> {
-        return {
-            payload: {text: obj.text}
-        }
+    (obj)=> {return {payload: {text: obj.text}}
     }
 )
 
